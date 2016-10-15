@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+   		<action name="authorsearch" class="lab2.AuthorSearch">
+            <result name="success">/WEB-INF/content/authorsearchresult.jsp</result>
+            <result name="error">/WEB-INF/content/mainpage.jsp</result>
+            <result name="noresult">/WEB-INF/content/noresult.jsp</result>
+        </action>
+   		
+   		<action name="showdetails" class="lab2.ShowDetails">
+            <result name="success">/WEB-INF/content/details.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+   		
+   		<action name="author" class="lab2.AllAuthor">
+            <result name="success">/WEB-INF/content/author.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+   		
+   		<action name="book" class="lab2.AllBook">
+            <result name="success">/WEB-INF/content/book.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+        
+        <action name="delete" class="lab2.DeleteRow">
+            <result name="success">/WEB-INF/content/book.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+   		
+   		<action name="update" class="lab2.UpdateRow">
+            <result name="success">/WEB-INF/content/update.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+   		
+   		<action name="postupdate" class="lab2.PostUpdate">
+            <result name="success">/WEB-INF/content/book.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+            <result name="invalid">/WEB-INF/content/update.jsp</result>
+            
+        </action>
+   		
+   		<action name="add" class="lab2.AddRow">
+            <result name="success">/WEB-INF/content/add.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+   		
+   		<action name="postadd" class="lab2.PostAdd">
+            <result name="success">/WEB-INF/content/book.jsp</result>
+            <result name="noauthor">/WEB-INF/content/addauthor.jsp</result>
+            <result name="error">/WEB-INF/content/add.jsp</result>
+        </action>
+   		
+        <action name="*">
+            <result>/WEB-INF/content/{1}.jsp</result>
+        </action>
+    </package>
+
+</struts>
